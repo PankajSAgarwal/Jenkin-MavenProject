@@ -31,7 +31,7 @@ public class Hello {
      *
      * @param printer PrintStream to write output to.
      */
-    public void sayHello(PrintStream printer) {
+    public void sayHello(final PrintStream printer) {
         for (short i = 0; i < times; i++) {
             printer.println(HELLO);
         }
