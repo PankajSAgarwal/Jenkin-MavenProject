@@ -14,14 +14,15 @@ public class Hello {
     /**
      * Set how many times "Hello!" should be said.
      *
-     * @param timesparam How many times should this class say "Hello!"? 
+     * @param timesparam How many times should this class say "Hello!"?
      * The value should be no larger than 20.
      * @throws IllegalArgumentException Thrown when times is larger 
      * than 20 or a negative number.
      */
 	public void setTimes(final int timesparam) {
 		if (timesparam < 0 || timesparam > MAXIMUM_AMOUNT_OF_TIMES) {
-			throw new IllegalArgumentException("Parameter «times» should be a " + "positive integer no larger than "
+			throw new IllegalArgumentException("Parameter «times» should be a "
+					+ "positive integer no larger than "
 					+ MAXIMUM_AMOUNT_OF_TIMES + ".");
 		}
 		this.times = (short) timesparam;
