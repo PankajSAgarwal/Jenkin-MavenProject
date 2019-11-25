@@ -19,11 +19,11 @@ public class Hello {
      * @throws IllegalArgumentException Thrown when times is larger 
      * than 20 or a negative number.
      */
-    public void setTimes(int times) {
-        if (times < 0 || times > MAXIMUM_AMOUNT_OF_TIMES) {
+    public void setTimes(final int timesparam) {
+        if (timesparam < 0 || timesparam > MAXIMUM_AMOUNT_OF_TIMES) {
             throw new IllegalArgumentException("Parameter «times» should be a " + "positive integer no larger than " + MAXIMUM_AMOUNT_OF_TIMES + ".");
         }
-        this.times = (short) times;
+        this.times = (short) timesparam;
     }
 
     /**
