@@ -21,9 +21,11 @@ public class Hello {
      */
 	public void setTimes(final int timesparam) {
 		if (timesparam < 0 || timesparam > MAXIMUM_AMOUNT_OF_TIMES) {
-			throw new IllegalArgumentException("Parameter «times» should be a "
+			throw new IllegalArgumentException(
+					"Parameter «times» should be a "
 					+ "positive integer no larger than "
-					+ MAXIMUM_AMOUNT_OF_TIMES + ".");
+					+ MAXIMUM_AMOUNT_OF_TIMES + "."
+					);
 		}
 		this.times = (short) timesparam;
 	}
