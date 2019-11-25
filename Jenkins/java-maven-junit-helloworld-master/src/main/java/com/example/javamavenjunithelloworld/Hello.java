@@ -19,13 +19,13 @@ public class Hello {
      * than 20 or a negative number.
      */
 	public void setTimes(final int timesparam){
-		if (timesparam < 0 || timesparam > MAXIMUM_AMOUNT_OF_TIMES) {
+		if (timesparam < 0 || timesparam > MAXIMUM_AMOUNT_OF_TIMES) 
 			throw new IllegalArgumentException(
 					"Parameter «times» should be a "
 					+ "positive integer no larger than "
 					+ MAXIMUM_AMOUNT_OF_TIMES + "."
 					);
-		}
+		
 		this.times = (short) timesparam;
 	}
 
