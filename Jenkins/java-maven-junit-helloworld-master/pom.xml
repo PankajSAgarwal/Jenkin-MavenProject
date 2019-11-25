@@ -52,17 +52,7 @@
 
   <build>
     <plugins>
-      <plugin>
-       <groupId>org.apache.maven.plugins</groupId>
-       <artifactId>maven-pmd-plugin</artifactId>
-       <version>3.7</version>
-       <configuration>
-           <rulesets>
-               <ruleset>/rulesets/java/braces.xml</ruleset>
-               <ruleset>/rulesets/java/naming.xml</ruleset>
-           </rulesets>
-       </configuration>
-     </plugin>
+      
       <plugin>
         <!-- Configures the compiler. -->
         <groupId>org.apache.maven.plugins</groupId>
@@ -103,15 +93,48 @@
     </plugins>
   </build>
 
-  <reporting>
-    <plugins>
-      <plugin>
-        <!-- JUnit code coverage. -->
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.6</version>
-      </plugin>
-    </plugins>
-  </reporting>
+ <reporting>
+		<plugins>
+			<!-- Normally, we take off the dependency report, saves time. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+			<configuration>
+				<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+			</configuration>
+			</plugin>
+			 <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<configuration>
+					<formats>
+				            <format>html</format>
+				            <format>xml</format>
+					</formats>
+			        </configuration>
+				<version>2.7</version>
+				 <reportSets>
+			          <reportSet>
+			            <reports>
+			              <report>cobertura</report>
+			            </reports>
+			          </reportSet>
+			        </reportSets>
+			</plugin>
+
+ 		            <plugin>
+ 		               <groupId>org.apache.maven.plugins</groupId>
+ 		               <artifactId>maven-pmd-plugin</artifactId>
+ 		               <version>3.7</version>
+ 		               <configuration>
+ 		                   <rulesets>
+ 		                       <ruleset>/rulesets/java/braces.xml</ruleset>
+ 		                       <ruleset>/rulesets/java/naming.xml</ruleset>
+ 		                   </rulesets>
+ 		               </configuration>
+ 		           </plugin>
+ 	    </plugins>
+	  </reporting>
 
 </project>
